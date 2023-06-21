@@ -1,11 +1,11 @@
-# co63f4a65ac316545d08e1674
+# QUIZZICAL
 
 Quick start:
 
 ```
 $ yarn # npm install
 $ yarn build # npm run build
-````
+```
 
 ## Development
 
