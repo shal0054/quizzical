@@ -444,13 +444,13 @@ var _reactDom = __webpack_require__(4);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
+var _App = __webpack_require__(15);
+
+var _App2 = _interopRequireDefault(_App);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_reactDom2.default.render(_react2.default.createElement(
-  "h1",
-  null,
-  "Hello, world!"
-), document.getElementById("root"));
+_reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById("root"));
 
 /***/ }),
 /* 6 */
@@ -30463,6 +30463,102 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+exports.default = App;
+
+var _react = __webpack_require__(2);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function App() {
+  var _useState = (0, _react.useState)('start'),
+      _useState2 = _slicedToArray(_useState, 2),
+      screen = _useState2[0],
+      setScreen = _useState2[1];
+
+  var startScreen = _react2.default.createElement(
+    'div',
+    { className: 'main' },
+    _react2.default.createElement(
+      'h1',
+      null,
+      'QUIZZICAL'
+    ),
+    _react2.default.createElement(
+      'p',
+      null,
+      'Some description if needed'
+    ),
+    _react2.default.createElement(
+      'button',
+      { onClick: function onClick() {
+          return setScreen('quiz');
+        } },
+      'Start quiz'
+    )
+  );
+
+  var quizScreen = _react2.default.createElement(
+    'div',
+    { className: 'quiz-screen' },
+    _react2.default.createElement(
+      'form',
+      null,
+      _react2.default.createElement(
+        'legend',
+        { className: 'question' },
+        'How would one say goodbye in Spanish?'
+      ),
+      _react2.default.createElement('input', { className: 'answer', type: 'radio', id: 'a1' }),
+      _react2.default.createElement(
+        'label',
+        { className: 'answer', htmlFor: 'a1' },
+        'Answer 1'
+      ),
+      _react2.default.createElement('input', { className: 'answer', type: 'radio', id: 'a2' }),
+      _react2.default.createElement(
+        'label',
+        { className: 'answer', htmlFor: 'a2' },
+        'Answer 2'
+      ),
+      _react2.default.createElement('input', { className: 'answer', type: 'radio', id: 'a3' }),
+      _react2.default.createElement(
+        'label',
+        { className: 'answer', htmlFor: 'a3' },
+        'Answer 3'
+      ),
+      _react2.default.createElement('input', { className: 'answer', type: 'radio', id: 'a4' }),
+      _react2.default.createElement(
+        'label',
+        { className: 'answer', htmlFor: 'a4' },
+        'Answer 4'
+      ),
+      _react2.default.createElement('hr', null)
+    )
+  );
+
+  return _react2.default.createElement(
+    'main',
+    null,
+    screen === 'start' && startScreen,
+    screen === 'quiz' && quizScreen
+  );
+}
 
 /***/ })
 /******/ ]);
